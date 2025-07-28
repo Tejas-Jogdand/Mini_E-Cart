@@ -8,3 +8,12 @@ export const cartTotalSelector = selector({
     return cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
   }
 });
+
+export const cartItemTotalSelector = selector({
+  key: "cartTotal",
+  get: ({ get }) => {
+    const cart = get(cartState);
+    return cart.reduce((count,item) => count + item.quantity, 0);
+  }
+});
+

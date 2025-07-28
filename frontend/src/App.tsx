@@ -1,13 +1,19 @@
 import './App.css'
+import { Routes, Route, BrowserRouter } from 'react-router-dom';
+import Header from './components/Header';
 import Home from './pages/Home'
+import  NotFound  from "./pages/NotFound";
 
 function App() {
 
   return (
-    <div className="max-w-6xl mx-auto">
-      <h1 className="text-3xl font-bold text-center mt-4">🛒 Mini Shopping Cart</h1>
-      <Home/>
-    </div>
+    <BrowserRouter>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 
