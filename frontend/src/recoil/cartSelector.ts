@@ -9,8 +9,8 @@ export const cartTotalSelector = selector({
   }
 });
 
-export const cartItemTotalSelector = selector({
-  key: "cartTotal",
+export const cartItemsSelector = selector({
+  key: "cartItems",
   get: ({ get }) => {
     const cart = get(cartState);
     return cart.reduce((count,item) => count + item.quantity, 0);
